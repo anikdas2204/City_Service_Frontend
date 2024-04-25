@@ -16,14 +16,14 @@ const CityTable = () => {
     }, [dataFetched, sortField, sortDirection, filterName]); // Re-fetch data when dataFetched, sorting field, direction, or filter name changes
  
     const fetchData = async () => {
-        let apiUrl = 'http://localhost:3030/api/v1/cities/list';
+        let apiUrl = 'https://temp-app-unexpected-ratel-ou.cfapps.sap.hana.ondemand.com/api/v1/cities/list';
  
         if (sortField) {
-            apiUrl = `http://localhost:3030/api/v1/cities/listSorted?field=${sortField}&direction=${sortDirection}`;
+            apiUrl = `https://temp-app-unexpected-ratel-ou.cfapps.sap.hana.ondemand.com/api/v1/cities/listSorted?field=${sortField}&direction=${sortDirection}`;
         }
  
         if (filterName) {
-            apiUrl = `http://localhost:3030/api/v1/cities/filterByName?name=${encodeURIComponent(filterName)}`;
+            apiUrl = `https://temp-app-unexpected-ratel-ou.cfapps.sap.hana.ondemand.com/api/v1/cities/filterByName?name=${encodeURIComponent(filterName)}`;
         }
  
         try {
